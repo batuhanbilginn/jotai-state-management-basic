@@ -22,9 +22,7 @@ const TilesWithAtom = () => {
   const tiles = useAtomValue(splittedTilesAtom);
   return (
     <div>
-      <h1 className="mb-4 text-lg text-neutral-500">
-        Jotai (splitAtom Version)
-      </h1>
+      <h1 className="mb-4 text-sm text-neutral-500">Jotai (splitAtom)</h1>
       <div className="grid grid-cols-3 gap-2">
         {tiles.map((tile) => (
           <Tile atom={tile} key={tile.toString()} />

@@ -17,9 +17,7 @@ const Tiles = () => {
   ]);
   return (
     <div>
-      <h1 className="mb-4 text-lg text-neutral-500">
-        useState (Regular React Hook)
-      </h1>
+      <h1 className="mb-4 text-sm text-neutral-500">useState</h1>
       <div className="grid grid-cols-3 gap-2">
         {tiles.map((tile) => (
           <Tile setter={setter} key={tile.id} tile={tile} />

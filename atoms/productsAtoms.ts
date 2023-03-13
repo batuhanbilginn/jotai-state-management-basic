@@ -12,3 +12,23 @@ export const filteredProductsAtom = atom((get) => {
   if (!search) return products;
   return products.filter((product) => product.title.includes(search));
 });
+
+export const informationBarAtom = atom((get) => {
+  const totalProductsNumber = get(productsAtoms).length;
+  const filteredProductsNumber = get(filteredProductsAtom).length;
+  return {
+    totalProductsNumber,
+    filteredProductsNumber,
+  };
+});
+
+export const sortAtom = atom("asc");
+
+export const sortedProductsAtom = atom((get) => {
+  const sort = get(sortAtom);
+  const products = get(filteredProductsAtom);
+  if (sort === "asc") {
+    return [...products].sort((a, b) => a.price - b.price);
+  }
+  return [...products].sort((a, b) => b.price - a.price);
+});

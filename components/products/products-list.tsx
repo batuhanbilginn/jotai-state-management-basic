@@ -1,13 +1,12 @@
 "use client";
-import { filteredProductsAtom, resetSearchAtom } from "@/atoms/productsAtoms";
+import { resetSearchAtom, sortedProductsAtom } from "@/atoms/productsAtoms";
 
-import { useAtom, useSetAtom } from "jotai";
+import { useAtomValue, useSetAtom } from "jotai";
 import Product from "./product-item";
 
 const Products = () => {
-  
-  const [products, setProducts] = useAtom(filteredProductsAtom);
-  const resetSearch = useSetAtom(resetSearchAtom)
+  const products = useAtomValue(sortedProductsAtom);
+  const resetSearch = useSetAtom(resetSearchAtom);
   return (
     <div className="grid grid-cols-1 gap-5 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {products.length > 0 ? (

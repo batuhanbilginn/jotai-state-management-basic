@@ -18,7 +18,7 @@ const Tile = ({ atom }: { atom: PrimitiveAtom<TileI> }) => {
         color: tile.isSelected ? tile.color : "inherit",
         borderColor: tile.isSelected ? tile.color + "40" : "#e5e5e5",
       }}
-      className="flex items-center justify-center w-40 h-40 text-2xl font-medium border cursor-pointer border-neutral-200"
+      className="flex items-center justify-center w-16 h-16 text-2xl font-medium border cursor-pointer border-neutral-200"
     >
       {tile.id}
     </div>
