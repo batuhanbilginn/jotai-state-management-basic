@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .rich-text h2 {
+    @apply my-2 text-2xl font-medium;
+  }
+
+  .rich-text p {
+    @apply my-2 text-neutral-700 first:mt-8;
+  }
+}
